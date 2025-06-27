@@ -17,9 +17,9 @@ resource "aws_instance" "compute_instances" {
     prevent_destroy = false # Set to true to prevent accidental deletion of the instance
   }
 
-  depends_on = [
-    aws_key_pair.my_key_pair,
-  ]
+  # depends_on = [
+  #   aws_key_pair.my_key_pair,
+  # ]
 }
 
 

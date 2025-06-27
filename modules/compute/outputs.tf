@@ -1,6 +1,6 @@
-output "my_key" {
-  value = aws_key_pair.my_key_pair.key_name
-}
+# output "my_key" {
+#   value = aws_key_pair.my_key_pair.key_name
+# }
 
 output "instance_ids" {
   description = "IDs of the created EC2 instances"
