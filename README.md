@@ -123,12 +123,13 @@ terraform destroy -auto-approve -var-file=terraform.tfvars
 
 ## 🚦 GitHub Actions CI/CD
 
-<div align="center">
+- **Branch: pre-prod**
+  - On `push` → Runs `init`, `validate`, `plan`, `apply` on pre-prod infra.
+  
+  <div align="center">
   <img src="terr-sc/preprod-pipe.png" alt="Pre-Prod Pipeline" width="420"/>
 </div>
 
-- **Branch: pre-prod**
-  - On `push` → Runs `init`, `validate`, `plan`, `apply` on pre-prod infra.
 - **Branch: prod**
   - On `merge` → Runs `init`, `validate`, `plan`, `apply` on production infra.
 
@@ -203,3 +204,5 @@ terraform destroy -auto-approve -var-file=terraform.tfvars
 <p align="center">
   <img src="https://img.shields.io/badge/Author-Ahmed%20Mohamedy-4BCA81?style=flat-square" alt="Author" />
 </p>
+
+Author: Ahmed Mohamedy
