@@ -9,3 +9,7 @@ output "public_subnet_ids" {
 output "igw_id" {
   value = aws_internet_gateway.zone_igw.id
 }
+
+output "security_group_id" {
+  value = aws_security_group.zone_public_sg.id
+}

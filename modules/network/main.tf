@@ -60,3 +60,28 @@ resource "aws_subnet" "zone_public_subnets" {
 data "aws_availability_zones" "available" {
   state = "available"
 }
+
+resource "aws_security_group" "zone_public_sg" {
+  name        = "poc-${var.env}-sg"
+  description = "Security group for compute instances in ${var.env} environment"
+  vpc_id      = aws_vpc.zone_vpc.id
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+    egress {
+        from_port   = 0
+        to_port     = 0
+        protocol    = "-1" # All protocols
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+    tags = merge(
+        {
+        Name = "poc-${var.env}-sg"
+        },
+        var.common_tags
+    )
+}

@@ -25,3 +25,9 @@ variable "common_tags" {
     description = "Tags to apply to all resources"
     default     = {}
 }
+
+variable "security_group_id" {
+    description = "Security group ID to associate with the compute instances"
+    type        = string
+  
+}

@@ -23,6 +23,6 @@ resource "aws_key_pair" "my_key_pair" {
 resource "null_resource" "Change_key_permission" {
   depends_on = [ tls_private_key.my_key ]
   provisioner "local-exec" {
-    command = "echo '2510' | sudo -S chmod 400 ${path.module}/../../../zone-keys/access.pem"
+    command = "echo '2510' | chmod 400 ${path.module}/../../../zone-keys/access.pem"
   }  
  }

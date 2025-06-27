@@ -10,6 +10,7 @@ module "network" {
 module "compute" {
   source         = "../../modules/compute"
   env            = var.env
+  security_group_id = module.network.security_group_id
   subnet_ids     = module.network.public_subnet_ids
   instance_count = var.instance_count
   common_tags    = var.common_tags
